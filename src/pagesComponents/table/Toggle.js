@@ -27,6 +27,8 @@ export const Toggle = ({ setToggleData }) => {
           bottom: 12,
           right: 12,
           border: "1px solid black",
+          backgroundColor: "black",
+          color: "white",
           padding: 12,
           borderRadius: 12,
           cursor: "pointer",
@@ -74,6 +76,15 @@ export const Toggle = ({ setToggleData }) => {
             onClick={onOffFilter}
           />
           <label for="search"> Searchbar</label>
+          <br />
+          <input
+            type="checkbox"
+            id="notfound"
+            name="notfound"
+            value="notfound"
+            onClick={onOffFilter}
+          />
+          <label for="notfound"> Not Found</label>
           <br />
           <input
             type="checkbox"

@@ -18,6 +18,7 @@ export const TableMainComponents = () => {
   const isFilter = toggleData?.includes("filter");
   const isSort = toggleData?.includes("sort");
   const isDelete = toggleData?.includes("delete");
+  const isNotFoundAndLoading = toggleData?.includes("notfound");
 
   const isAsc = sortAge === "asc";
   const isDesc = sortAge === "desc";
@@ -59,6 +60,8 @@ export const TableMainComponents = () => {
     setUsers(filtered);
   };
 
+  const isNotFound = !sortedNumbers.length;
+
   return (
     <div>
       <Toggle setToggleData={setToggleData} />
@@ -76,6 +79,8 @@ export const TableMainComponents = () => {
       </div>
       {loading ? (
         <h1>Loading.....</h1>
+      ) : isNotFoundAndLoading && isNotFound ? (
+        <h1>Not Found .....</h1>
       ) : (
         <MainTable
           users={sortedNumbers}
