@@ -19,6 +19,7 @@ export const TableMainComponents = () => {
   const isSort = toggleData?.includes("sort");
   const isDelete = toggleData?.includes("delete");
   const isNotFoundAndLoading = toggleData?.includes("notfound");
+  const isHoverToggle = toggleData?.includes("hover");
 
   const isAsc = sortAge === "asc";
   const isDesc = sortAge === "desc";
@@ -87,6 +88,7 @@ export const TableMainComponents = () => {
           handleDelete={handleDelete}
           isMasking={isMasking}
           isDelete={isDelete}
+          isHoverToggle={isHoverToggle}
         />
       )}
     </div>

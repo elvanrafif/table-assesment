@@ -70,6 +70,15 @@ export const Toggle = ({ setToggleData }) => {
           <br />
           <input
             type="checkbox"
+            id="hover"
+            name="hover"
+            value="hover"
+            onClick={onOffFilter}
+          />
+          <label for="hover"> Hover Table</label>
+          <br />
+          <input
+            type="checkbox"
             id="search"
             name="search"
             value="search"

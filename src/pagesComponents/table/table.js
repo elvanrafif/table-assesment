@@ -1,7 +1,13 @@
 "use client";
 import React, { useState } from "react";
 
-export const MainTable = ({ users, handleDelete, isMasking, isDelete }) => {
+export const MainTable = ({
+  users,
+  handleDelete,
+  isMasking,
+  isDelete,
+  isHoverToggle,
+}) => {
   const [idHover, setIdHover] = useState(false);
   return (
     <div style={{ textAlign: "center" }}>
@@ -22,7 +28,7 @@ export const MainTable = ({ users, handleDelete, isMasking, isDelete }) => {
           {users?.map((item, index) => {
             const { id, firstName, lastName, image, gender, company, age } =
               item || {};
-            const isHover = id === idHover;
+            const isHover = isHoverToggle && id === idHover;
             const maskingGender = () => {
               if (isMasking) {
                 if (gender === "male") return "M";
